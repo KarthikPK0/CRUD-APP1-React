@@ -8,7 +8,7 @@ function Read() {
   const [data, setData] = useState([])
   const { id } = useParams();
  useEffect(() => {
-  axios.get('http://localhost:3000/users/' + id).then(res => setData(res.data)).catch(err =>console.log(err));
+  axios.get('https://user-details-server.onrender.com/users/' + id).then(res => setData(res.data)).catch(err =>console.log(err));
  }, [])
 
   return (

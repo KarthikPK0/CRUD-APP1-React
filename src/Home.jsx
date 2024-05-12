@@ -7,13 +7,13 @@ function Home() {
   const navigate = useNavigate();
   const [data, setData] = useState([])
   useEffect(()=>{
-  axios.get('http://localhost:3000/users').then(res => setData(res.data)).catch(err =>console.log(err));
+  axios.get('https://user-details-server.onrender.com/users').then(res => setData(res.data)).catch(err =>console.log(err));
   }, [])
 
   const handleDelete = (id) => {
     const confirm = window.confirm("Do you want to delete the record?")
     if(confirm){
-      axios.delete('http://localhost:3000/users/'+id).then(res => {
+      axios.delete('https://user-details-server.onrender.com/users/'+id).then(res => {
              location.reload();
       }).catch(err => console.log(err))
     }

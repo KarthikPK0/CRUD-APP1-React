@@ -19,14 +19,14 @@ function Update() {
   //const [data, setData] = useState([])
   const { id } = useParams();
  useEffect(() => {
-  axios.get('http://localhost:3000/users/' + id).then(res => {setValues(res.data)}
+  axios.get('https://user-details-server.onrender.com/users/' + id).then(res => {setValues(res.data)}
 ).catch(err =>console.log(err));
  }, [])
 
 
  const handleUpdate = (event) => {
      event.preventDefault();
-     axios.put('http://localhost:3000/users/'+id, values).then(res => {
+     axios.put('https://user-details-server.onrender.com/users/'+id, values).then(res => {
       console.log(res);
       navigate('/')
     }).catch(err =>console.log(err));
